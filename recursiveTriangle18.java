@@ -1,3 +1,4 @@
+//Tommy Hojnicki
 import javax.swing.JApplet;
 import java.awt.*;
 
@@ -38,47 +39,43 @@ public class recursiveTriangle18 extends JApplet
         Triangle(xPos,yPos,page);
 
    }//end of paint
-   public void paint (Graphics page,int[] xPos, int[] yPos)
-   {
 
-        page.setColor (Color.red);
-        page.drawPolyline (xPos, yPos, xPos.length);
-
-        Triangle(xPos,yPos,page);
-
-   }//end of paint
 
    public void Triangle(int[] xPos, int[] yPos, Graphics page)
    {
        //Find the distance between 2 points ex. - x,y & x1,y1
-            double distance=Math.sqrt(Math.pow(2,xPos[0]-xPos[1])+Math.pow(2,yPos[0]-yPos[1]));
-             int[] xs= new int[4];
-            int[] ys= new int[4];
+            double distance=Math.sqrt(Math.pow(xPos[0]-xPos[1],2)+Math.pow(yPos[0]-yPos[1],2));
+             
         //if the segment/distance is 30 or so, good length to stop
-        if(distance<=30)
+        if(distance>12)
             
-            return ;
-        else
+           
+        
         {
-           int x1=(xPos[0]+xPos[1])/2;
-           int x2=(xPos[1]+xPos[2])/2;
-           int x3=(xPos[2]+xPos[3])/2;
+           int m1=(xPos[0]+xPos[1])/2;
+           int m2=(xPos[1]+xPos[2])/2;
+           int m3=(xPos[2]+xPos[0])/2;
            int y1=(yPos[0]+yPos[1])/2;
            int y2=(yPos[1]+yPos[2])/2;
-           int y3=(yPos[2]+yPos[3])/2;
-           xs={x1,x2,x3,x1
-           xs[0]=x1;
-           xs[1]=x2;
-           xs[2]=x3;
-           xs[3]=x1;
+           int y3=(yPos[2]+yPos[0])/2;
            
-           xs[0]=y1;
-           xs[1]=y2;
-           xs[2]=y3;
-           xs[3]=y1;
+           int[] xs={m1,m2,m3,m1};
+           int[] ys={y1,y2,y3,y1};
            
+          page.drawPolyline(xs,ys,xs.length);
            
+           int[] X1={xPos[0],m1,m3,xPos[0]};
+           int[] X2={xPos[1],m2,m1,xPos[1]};
+           int[] X3={xPos[2],m3,m2,xPos[2]};
+           int[] Y1={yPos[0],y1,y3,yPos[0]};
+           int[] Y2={yPos[1],y2,y1,yPos[1]};
+           int[] Y3={yPos[2],y3,y2,yPos[2]};
             
+           
+           
+           Triangle(X1,Y1,page);
+           Triangle(X2,Y2,page);
+           Triangle(X3,Y3,page);
         }
 
 

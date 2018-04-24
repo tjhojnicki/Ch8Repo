@@ -5,4 +5,6 @@ comment1.params=
 comment1.target=boolean\ isPal()
 comment2.params=test
 comment2.target=java.lang.String\ stringFlip(java.lang.String)
-numComments=3
+comment3.params=args
+comment3.target=void\ main(java.lang.String[])
+numComments=4

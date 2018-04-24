@@ -33,6 +33,7 @@ public class GCD
     {
         GCD dog= new GCD();
         System.out.println(dog.divide(33,9));
+        System.out.println(dog.divide(45,15)); 
     }
     
 

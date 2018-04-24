@@ -36,6 +36,13 @@ public class Palindrome
         return stringFlip (test.substring(1))+ test.charAt(0);
   }
   
+  public static void main(String[] args)
+  {
+     Palindrome pal1= new Palindrome("wasitaratisaw");
+     Palindrome pal2=new Palindrome("tommy");
+     System.out.println(pal1.isPal());
+     System.out.println(pal2.isPal());
+    }
   
    
  

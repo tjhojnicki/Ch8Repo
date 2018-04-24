@@ -15,7 +15,7 @@ public class Fundrasing
     }
     public int collect(int goal)
     {
-    
+    System.out.println(goal);
         
     if(goal==1)
      return 1;
